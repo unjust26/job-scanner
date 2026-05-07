@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env.local
+.env
+bun.lock
+.DS_Store
+convex/_generated/

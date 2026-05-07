@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:4173",
+      "localStorage": [
+        {
+          "name": "__convexAuthRefreshToken_httpsfinetiger33convexcloud",
+          "value": "jd7fmrga9h5jr6jhm189ymqytx869qwm|jh7195zmv245hvttk70e757g658689sw"
+        },
+        {
+          "name": "theme",
+          "value": "light"
+        },
+        {
+          "name": "__convexAuthJWT_httpsfinetiger33convexcloud",
+          "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqeDc5ZHA4ZTg3YjFhYmNyN2I0MmdjOGE4NTg2OWI4c3xqaDcxOTV6bXYyNDVodnR0azcwZTc1N2c2NTg2ODlzdyIsImlhdCI6MTc3ODExMzczOCwiaXNzIjoiaHR0cHM6Ly9maW5lLXRpZ2VyLTMzLmNvbnZleC5zaXRlIiwiYXVkIjoiY29udmV4IiwiZXhwIjoxNzc4MTE3MzM4fQ.kaXCSg4n66wrrVbcf0bokR9TSWez0vSh-kq-W8LJhEH7wzEjzRRrNp1Yi2Fn3VmlqHOwpv7C6G682rja313yACxu2mZJiYZej8HpavGrb488gLm0KuzB__lxOngMuF5qZDVOhHwSgoo_9I4O7avntukF0hoLHDf0GDhICM7bg6ATQ-OEAKyCRGPtGh9BXE0N9vfogS-xQZsRcOg_FyC0QRvd8NWUXI8JRa5Mxzl_mofjsLOBY1nwzZeGQHbsiF6sUL6PvywppN0MnWCe-xhHbD4zym206PPbQ-tOvEeKofcHZYdOdutEZajWY0PdTJQqpR9LcByTdPnNmriTlwOz_Q"
+        }
+      ]
+    }
+  ]
+}
