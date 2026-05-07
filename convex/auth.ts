@@ -4,7 +4,7 @@ import { query } from "./_generated/server";
 import { TestCredentials } from "./testAuth";
 import {
   emailProvider,
-  ViktorSpacesPasswordReset,
+  AppPasswordReset,
 } from "./emailProvider";
 
 declare const process: { env: Record<string, string | undefined> };
@@ -37,7 +37,7 @@ if (jwtPrivateKey) {
 }
 
 // Only register the @test.local credentials provider on preview/dev Convex
-// deployments. `APP_IS_PREVIEW` is set per-deployment by the Viktor
+// deployments. `APP_IS_PREVIEW` is set per-deployment by the App
 // Spaces backend (true on dev, false on prod). On production it is "false" or
 // unset, so the test provider is omitted entirely and `signIn("test", ...)`
 // fails with "Provider not configured".
@@ -45,7 +45,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   providers: [
     Password({
       verify: emailProvider,
-      reset: ViktorSpacesPasswordReset,
+      reset: AppPasswordReset,
     }),
     ...(process.env.APP_IS_PREVIEW === "true" ? [TestCredentials] : []),
   ],

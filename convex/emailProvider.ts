@@ -28,12 +28,12 @@ async function sendEmail({
 
   if (!apiUrl || !projectName || !projectSecret) {
     throw new Error(
-      "Viktor Spaces environment variables not configured. " +
+      "App environment variables not configured. " +
         "Required: APP_API_URL, APP_PROJECT_NAME, APP_PROJECT_SECRET",
     );
   }
 
-  const response = await fetch(`${apiUrl}/api/viktor-spaces/send-email`, {
+  const response = await fetch(`${apiUrl}/api/app/send-email`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -76,13 +76,13 @@ async function sendEmail({
 
 /**
  * Email verification provider for sign-up flow.
- * Sends OTP codes via Viktor Spaces API which:
+ * Sends OTP codes via Email API which:
  * - Rate limits per project (100 emails/hour)
  * - Sends from project-specific email addresses
  * - Keeps the Resend API key secure on the backend
  */
 export const emailProvider = Email({
-  id: "viktor-spaces-email",
+  id: "app-email",
   maxAge: 60 * 15, // 15 minutes
 
   async generateVerificationToken() {
@@ -102,10 +102,10 @@ export const emailProvider = Email({
 
 /**
  * Password reset email provider.
- * Uses the same Viktor Spaces API but with different email template.
+ * Uses the same Email API but with different email template.
  */
-export const ViktorSpacesPasswordReset = Email({
-  id: "viktor-spaces-password-reset",
+export const AppPasswordReset = Email({
+  id: "app-password-reset",
   maxAge: 60 * 15, // 15 minutes
 
   async generateVerificationToken() {

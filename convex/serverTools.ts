@@ -1,5 +1,5 @@
 /**
- * Viktor Tools - Call any Viktor SDK function from your Convex app.
+ * Server Tools - Call any Server SDK function from your Convex app.
  *
  * Available tools include:
  * - quick_ai_search: AI-powered web search with summarized results
@@ -14,12 +14,12 @@ import { action } from "./_generated/server";
 
 declare const process: { env: Record<string, string | undefined> };
 
-const VIKTOR_API_URL = process.env.APP_API_URL!;
+const API_URL = process.env.APP_API_URL!;
 const PROJECT_NAME = process.env.APP_PROJECT_NAME!;
 const PROJECT_SECRET = process.env.APP_PROJECT_SECRET!;
 
 async function callTool<T>(role: string, args: Record<string, unknown> = {}): Promise<T> {
-  const response = await fetch(`${VIKTOR_API_URL}/api/viktor-spaces/tools/call`, {
+  const response = await fetch(`${API_URL}/api/app/tools/call`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

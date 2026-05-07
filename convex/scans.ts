@@ -9,7 +9,7 @@ import { internal, api } from "./_generated/api";
 
 declare const process: { env: Record<string, string | undefined> };
 
-const VIKTOR_API_URL = process.env.APP_API_URL!;
+const API_URL = process.env.APP_API_URL!;
 const PROJECT_NAME = process.env.APP_PROJECT_NAME!;
 const PROJECT_SECRET = process.env.APP_PROJECT_SECRET!;
 
@@ -18,7 +18,7 @@ async function callTool<T>(
   args: Record<string, unknown> = {},
 ): Promise<T> {
   const response = await fetch(
-    `${VIKTOR_API_URL}/api/viktor-spaces/tools/call`,
+    `${API_URL}/api/app/tools/call`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
